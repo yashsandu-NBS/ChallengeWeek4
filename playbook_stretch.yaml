@@ -1,4 +1,4 @@
-- hosts: 127.0.0.1
+- hosts: all
   connection: local
   become: true
   tasks:
@@ -10,7 +10,7 @@
       - curl
       - software-properties-common
       update_cache: yes
-  
+
   - name: 'Add Docker Apt Key'
     apt_key:
       url: https://download.docker.com/linux/ubuntu/gpg
@@ -29,7 +29,9 @@
   - name: 'Start Docker Service'
     pip:
       name: docker-compose
+      update_cache: yes
 
   - name: 'Install Python Package Docker'
     pip:
       name: python3-pip
+      
