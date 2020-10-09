@@ -2,6 +2,11 @@
 This repository contains the solutions to the Challenge Week 4.
 
 ### What was the challenge?
+Run from the root directory: 
+  Base task: ansible-playbook playbook.yaml
+  Stretch goal: ansible-playbook playbook_stretch.yaml
+
+### What was the challenge?
 Write a playbook that installs Docker onto the local machine.
 
 Stretch Goals:
