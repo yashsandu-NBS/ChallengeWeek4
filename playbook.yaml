@@ -2,7 +2,7 @@
   connection: local
   become: true
   tasks:
-  - name: 'Install required dependencies'
+  - name: 'Install Required Dependencies'
     apt:
       pkg:
       - apt-transport-https
@@ -26,10 +26,11 @@
       name: docker-ce
       update_cache: yes
 
-  - name: 'Start Docker Service'
-    pip:
-      name: docker-compose
-
   - name: 'Install Python Package Docker'
     pip:
       name: docker
+
+  - name: 'Start Docker Service'
+    service:
+      name: docker
+      state: started

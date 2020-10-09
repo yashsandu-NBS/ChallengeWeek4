@@ -1,8 +1,8 @@
-- hosts: all
+- hosts: 127.0.0.1
   connection: local
   become: true
   tasks:
-  - name: 'Installing apt-transport-https dependency'
+  - name: 'Install required dependencies'
     apt:
       pkg:
       - apt-transport-https
@@ -29,9 +29,8 @@
   - name: 'Start Docker Service'
     pip:
       name: docker-compose
-      update_cache: yes
 
   - name: 'Install Python Package Docker'
     pip:
-      name: python3-pip
-      
+      name: docker
+ 
